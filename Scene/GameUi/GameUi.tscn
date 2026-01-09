@@ -1,0 +1,114 @@
+[gd_scene load_steps=10 format=3 uid="uid://b8icyb3jxee2p"]
+
+[ext_resource type="Script" uid="uid://bwk7hnf0qgol" path="res://Scene/GameUi/GameUi.cs" id="1_hdxvj"]
+[ext_resource type="FontFile" uid="uid://cfpyassm7s8wi" path="res://Asset/fonts/LuckiestGuy-Regular.ttf" id="1_xl6cj"]
+[ext_resource type="LabelSettings" uid="uid://d1dojcvkxgsrh" path="res://Ressources/Policy_HighScore.tres" id="2_uu8te"]
+[ext_resource type="AudioStream" uid="uid://dbs48hyj68j3c" path="res://Asset/audio/game_over.wav" id="4_evfii"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_uu8te"]
+font = ExtResource("1_xl6cj")
+font_size = 64
+font_color = Color(0.7152792, 0.32015413, 4.813075e-07, 1)
+outline_size = 10
+outline_color = Color(1, 0.691325, 0.5260914, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_hdxvj"]
+font = ExtResource("1_xl6cj")
+font_size = 40
+font_color = Color(3.4413488e-06, 0.590946, 0.12804022, 1)
+outline_size = 10
+outline_color = Color(0.7825253, 1, 0.77838904, 1)
+
+[sub_resource type="Animation" id="Animation_uu8te"]
+resource_name = "flash"
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("MarginContainer/VB/PressSpace:visible_ratio")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 1.0]
+}
+
+[sub_resource type="Animation" id="Animation_hdxvj"]
+length = 0.001
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_hdxvj"]
+_data = {
+&"RESET": SubResource("Animation_hdxvj"),
+&"flash": SubResource("Animation_uu8te")
+}
+
+[node name="GameUi" type="Control" node_paths=PackedStringArray("_vb", "_animPress", "_scoreLabel", "_sound", "_timerGameOver")]
+process_mode = 3
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("1_hdxvj")
+_vb = NodePath("MarginContainer/VB")
+_animPress = NodePath("AnimationPlayer")
+_scoreLabel = NodePath("MarginContainer/Score")
+_sound = NodePath("AudioStreamPlayer2D")
+_timerGameOver = NodePath("Timer")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 24
+theme_override_constants/margin_top = 24
+theme_override_constants/margin_right = 24
+theme_override_constants/margin_bottom = 24
+
+[node name="Score" type="Label" parent="MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+text = "XXXX"
+label_settings = ExtResource("2_uu8te")
+
+[node name="VB" type="VBoxContainer" parent="MarginContainer"]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="GameOver" type="Label" parent="MarginContainer/VB"]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Game Over"
+label_settings = SubResource("LabelSettings_uu8te")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="PressSpace" type="Label" parent="MarginContainer/VB"]
+layout_mode = 2
+text = "Press Space"
+label_settings = SubResource("LabelSettings_hdxvj")
+horizontal_alignment = 1
+vertical_alignment = 1
+visible_characters = 0
+visible_ratio = 0.0
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_hdxvj")
+}
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_evfii")
+
+[node name="Timer" type="Timer" parent="."]
+one_shot = true

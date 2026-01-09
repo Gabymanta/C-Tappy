@@ -1,0 +1,17 @@
+C:\Users\gabym\Documents\Godot\1-Project\C#\C#Tappy\.godot\mono\temp\bin\Debug\C# - Tappy.deps.json
+C:\Users\gabym\Documents\Godot\1-Project\C#\C#Tappy\.godot\mono\temp\bin\Debug\C# - Tappy.runtimeconfig.json
+C:\Users\gabym\Documents\Godot\1-Project\C#\C#Tappy\.godot\mono\temp\bin\Debug\C# - Tappy.dll
+C:\Users\gabym\Documents\Godot\1-Project\C#\C#Tappy\.godot\mono\temp\bin\Debug\C# - Tappy.pdb
+C:\Users\gabym\Documents\Godot\1-Project\C#\C#Tappy\.godot\mono\temp\bin\Debug\GodotSharp.dll
+C:\Users\gabym\Documents\Godot\1-Project\C#\C#Tappy\.godot\mono\temp\bin\Debug\GodotSharpEditor.dll
+C:\Users\gabym\Documents\Godot\1-Project\C#\C#Tappy\.godot\mono\temp\obj\Debug\C# - Tappy.csproj.AssemblyReference.cache
+C:\Users\gabym\Documents\Godot\1-Project\C#\C#Tappy\.godot\mono\temp\obj\Debug\C# - Tappy.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\gabym\Documents\Godot\1-Project\C#\C#Tappy\.godot\mono\temp\obj\Debug\C# - Tappy.AssemblyInfoInputs.cache
+C:\Users\gabym\Documents\Godot\1-Project\C#\C#Tappy\.godot\mono\temp\obj\Debug\C# - Tappy.AssemblyInfo.cs
+C:\Users\gabym\Documents\Godot\1-Project\C#\C#Tappy\.godot\mono\temp\obj\Debug\C# - Tappy.csproj.CoreCompileInputs.cache
+C:\Users\gabym\Documents\Godot\1-Project\C#\C#Tappy\.godot\mono\temp\obj\Debug\C# - Tappy.csproj.Up2Date
+C:\Users\gabym\Documents\Godot\1-Project\C#\C#Tappy\.godot\mono\temp\obj\Debug\C# - Tappy.dll
+C:\Users\gabym\Documents\Godot\1-Project\C#\C#Tappy\.godot\mono\temp\obj\Debug\refint\C# - Tappy.dll
+C:\Users\gabym\Documents\Godot\1-Project\C#\C#Tappy\.godot\mono\temp\obj\Debug\C# - Tappy.pdb
+C:\Users\gabym\Documents\Godot\1-Project\C#\C#Tappy\.godot\mono\temp\obj\Debug\C# - Tappy.genruntimeconfig.cache
+C:\Users\gabym\Documents\Godot\1-Project\C#\C#Tappy\.godot\mono\temp\obj\Debug\ref\C# - Tappy.dll

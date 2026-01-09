@@ -1,0 +1,47 @@
+[gd_scene load_steps=8 format=3 uid="uid://dkijxhe6i0636"]
+
+[ext_resource type="Script" uid="uid://cur5njdpnsagc" path="res://Scene/Game/Game.cs" id="1_xb2vu"]
+[ext_resource type="PackedScene" uid="uid://d86ch50vosb7" path="res://Scene/Barrier/Barrier.tscn" id="2_eq4nl"]
+[ext_resource type="PackedScene" uid="uid://gfhwvcyv74b5" path="res://Scene/ScrollingBg/ScrollingBg.tscn" id="3_hevcj"]
+[ext_resource type="PackedScene" uid="uid://bs17xi4slmp3k" path="res://Scene/Plane/Plane.tscn" id="3_ssqj0"]
+[ext_resource type="PackedScene" uid="uid://bojuvewwrqpmk" path="res://Scene/Pipes/Pipes.tscn" id="5_lpnlh"]
+[ext_resource type="AudioStream" uid="uid://cmx5cjkeq3jhy" path="res://Asset/audio/engine.mp3" id="6_4osps"]
+[ext_resource type="PackedScene" uid="uid://b8icyb3jxee2p" path="res://Scene/GameUi/GameUi.tscn" id="7_hevcj"]
+
+[node name="Game" type="Node" node_paths=PackedStringArray("_spawnPipeTimer", "_upper", "_lower", "_pipesHolder")]
+script = ExtResource("1_xb2vu")
+_pipesScene = ExtResource("5_lpnlh")
+_spawnPipeTimer = NodePath("Timer")
+_upper = NodePath("UpperSpawn")
+_lower = NodePath("LowerSpawn")
+_pipesHolder = NodePath("Pipes")
+
+[node name="ScrollingBg" parent="." instance=ExtResource("3_hevcj")]
+scale = Vector2(0.8, 0.8)
+
+[node name="Barrier" parent="." instance=ExtResource("2_eq4nl")]
+
+[node name="Plane" parent="." instance=ExtResource("3_ssqj0")]
+position = Vector2(99, 424)
+
+[node name="UpperSpawn" type="Marker2D" parent="."]
+position = Vector2(540, 256)
+
+[node name="LowerSpawn" type="Marker2D" parent="."]
+position = Vector2(540, 628)
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 2.0
+autostart = true
+
+[node name="Pipes" type="Node" parent="."]
+
+[node name="Sound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_4osps")
+volume_db = -10.0
+autoplay = true
+parameters/looping = true
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="GameUi" parent="CanvasLayer" instance=ExtResource("7_hevcj")]

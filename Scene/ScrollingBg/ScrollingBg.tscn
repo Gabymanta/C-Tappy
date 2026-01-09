@@ -1,0 +1,54 @@
+[gd_scene load_steps=7 format=3 uid="uid://gfhwvcyv74b5"]
+
+[ext_resource type="Texture2D" uid="uid://c0ddoi4hsdcvj" path="res://Asset/background/sky.png" id="1_bonwf"]
+[ext_resource type="Texture2D" uid="uid://bua0hp0gntmxv" path="res://Asset/background/clouds_1.png" id="2_dhkuu"]
+[ext_resource type="Texture2D" uid="uid://dasfk7gslrw8m" path="res://Asset/background/clouds_2.png" id="3_3flp6"]
+[ext_resource type="Texture2D" uid="uid://ba258qr8rp1a8" path="res://Asset/background/clouds_3.png" id="4_va3c5"]
+[ext_resource type="Texture2D" uid="uid://dkobqqeg3wmul" path="res://Asset/background/rocks_1.png" id="5_3flp6"]
+[ext_resource type="Texture2D" uid="uid://ew156fjiunxv" path="res://Asset/background/rocks_2.png" id="6_va3c5"]
+
+[node name="ScrollingBg" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_bonwf")
+centered = false
+
+[node name="Parallax2D" type="Parallax2D" parent="."]
+repeat_size = Vector2(1920, 0)
+autoscroll = Vector2(-10, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="Parallax2D"]
+texture = ExtResource("2_dhkuu")
+centered = false
+
+[node name="Parallax2D2" type="Parallax2D" parent="."]
+repeat_size = Vector2(1920, 0)
+autoscroll = Vector2(-20, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="Parallax2D2"]
+texture = ExtResource("3_3flp6")
+centered = false
+
+[node name="Parallax2D3" type="Parallax2D" parent="."]
+repeat_size = Vector2(1920, 0)
+autoscroll = Vector2(-30, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="Parallax2D3"]
+texture = ExtResource("4_va3c5")
+centered = false
+
+[node name="Parallax2D4" type="Parallax2D" parent="."]
+repeat_size = Vector2(1920, 0)
+autoscroll = Vector2(-40, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="Parallax2D4"]
+texture = ExtResource("5_3flp6")
+centered = false
+
+[node name="Parallax2D5" type="Parallax2D" parent="."]
+repeat_size = Vector2(1920, 0)
+autoscroll = Vector2(-50, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="Parallax2D5"]
+texture = ExtResource("6_va3c5")
+centered = false

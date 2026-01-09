@@ -1,0 +1,13 @@
+res://Scene/Changes/SimpleChange.tscn
+res://Globals/GameManager.cs
+res://Scene/Changes/SimpleChange.cs
+res://Scene/Main/Main.cs
+res://Scene/Game/Game.cs
+res://Globals/SignalHub.cs
+res://Scene/GameUi/GameUi.cs
+res://Classes/HighScoreResource.cs
+res://Scene/Pipes/Pipes.cs
+res://Globals/ScoreManager.cs
+res://Scene/Plane/Plane.cs
+res://Scene/Changes/ComplexChange.tscn
+res://Scene/Changes/ComplexChange.cs
