@@ -1,10 +1,11 @@
-[gd_scene load_steps=10 format=3 uid="uid://dlaq4wb6sph1w"]
+[gd_scene load_steps=11 format=3 uid="uid://dlaq4wb6sph1w"]
 
 [ext_resource type="Script" uid="uid://veeahcq06qy0" path="res://Scene/Main/Main.cs" id="1_66shk"]
 [ext_resource type="Texture2D" uid="uid://c0ddoi4hsdcvj" path="res://Asset/background/sky.png" id="2_l12wf"]
 [ext_resource type="FontFile" uid="uid://cfpyassm7s8wi" path="res://Asset/fonts/LuckiestGuy-Regular.ttf" id="3_v7uor"]
 [ext_resource type="LabelSettings" uid="uid://d1dojcvkxgsrh" path="res://Ressources/Policy_HighScore.tres" id="4_1qe3j"]
 [ext_resource type="AudioStream" uid="uid://p2i2ferjwwa" path="res://Asset/audio/bgm_menu.mp3" id="5_7iemq"]
+[ext_resource type="PackedScene" uid="uid://dhbann5qon3po" path="res://Scene/PlaneMainAnimation/PlaneMainAnimation.tscn" id="6_l12wf"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_uu8te"]
 font = ExtResource("3_v7uor")
@@ -43,7 +44,7 @@ _data = {
 &"Flash": SubResource("Animation_evfii")
 }
 
-[node name="Main" type="Control" node_paths=PackedStringArray("_scoreLabel")]
+[node name="Main" type="Control" node_paths=PackedStringArray("_scoreLabel", "_holderPlanes", "_spawnerPlane")]
 process_mode = 3
 layout_mode = 3
 anchors_preset = 15
@@ -53,6 +54,9 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_66shk")
 _scoreLabel = NodePath("MC/Label4")
+_planeAnimation = ExtResource("6_l12wf")
+_holderPlanes = NodePath("Planes")
+_spawnerPlane = NodePath("Planes/Timer")
 
 [node name="TextureRect" type="TextureRect" parent="."]
 layout_mode = 1
@@ -65,6 +69,7 @@ texture = ExtResource("2_l12wf")
 expand_mode = 1
 
 [node name="MC" type="MarginContainer" parent="."]
+z_index = 1
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -117,3 +122,9 @@ libraries = {
 &"": SubResource("AnimationLibrary_8r6wp")
 }
 autoplay = "Flash"
+
+[node name="Planes" type="Node" parent="."]
+
+[node name="Timer" type="Timer" parent="Planes"]
+wait_time = 5.0
+autostart = true

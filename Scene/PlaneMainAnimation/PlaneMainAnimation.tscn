@@ -1,0 +1,73 @@
+[gd_scene load_steps=10 format=3 uid="uid://dhbann5qon3po"]
+
+[ext_resource type="Texture2D" uid="uid://dwvt24nfos6xj" path="res://Asset/plane/planes_sheet.png" id="1_6wp85"]
+[ext_resource type="Script" uid="uid://pffrmwn7plc4" path="res://Scene/PlaneMainAnimation/PlaneMainAnimation.cs" id="1_fcvwe"]
+[ext_resource type="Texture2D" uid="uid://d03rylj0tuowi" path="res://Asset/plane/ParticleDot.png" id="2_fcvwe"]
+
+[sub_resource type="Curve" id="Curve_7xxge"]
+_data = [Vector2(0, 0.68680096), 0.0, 0.0, 0, 0, Vector2(0.41549295, 1), 0.0, 0.0, 0, 0, Vector2(1, 0.4362417), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="Gradient" id="Gradient_7dm4l"]
+colors = PackedColorArray(0.24840015, 0.24840018, 0.24840015, 1, 0.85864794, 0.858648, 0.85864794, 1)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jixrv"]
+atlas = ExtResource("1_6wp85")
+region = Rect2(0, 0, 88, 73)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7xvuj"]
+atlas = ExtResource("1_6wp85")
+region = Rect2(88, 0, 88, 73)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sfxqe"]
+atlas = ExtResource("1_6wp85")
+region = Rect2(176, 0, 88, 73)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_0g1fc"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jixrv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7xvuj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sfxqe")
+}],
+"loop": true,
+"name": &"fly",
+"speed": 10.0
+}]
+
+[node name="PlaneMainAnimation" type="Node2D" node_paths=PackedStringArray("_planeSprite", "_dispawn")]
+scale = Vector2(0.5, 0.5)
+script = ExtResource("1_fcvwe")
+_planeSprite = NodePath("AnimatedSprite2D")
+_dispawn = NodePath("Timer")
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="."]
+position = Vector2(-22, 8)
+amount = 50
+texture = ExtResource("2_fcvwe")
+lifetime = 0.5
+direction = Vector2(-1, 0)
+spread = 0.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 25.0
+initial_velocity_max = 50.0
+angle_max = 33.0
+scale_amount_min = 0.1
+scale_amount_max = 0.2
+scale_amount_curve = SubResource("Curve_7xxge")
+color_ramp = SubResource("Gradient_7dm4l")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_0g1fc")
+animation = &"fly"
+autoplay = "fly"
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 8.0
+one_shot = true
+autostart = true

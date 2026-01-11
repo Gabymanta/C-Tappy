@@ -1,14 +1,14 @@
+Timer
+Node
+CPUParticles2D
+AnimatedSprite2D
+AnimatableBody2D
+Sprite2D
 AnimationPlayer
 ColorRect
 CanvasLayer
 TextureRect
-Sprite2D
 Parallax2D
-Timer
 AudioStreamPlayer      - Matches the "sound" keyword.
 AudioStreamPlayer2D      - Matches the "sound" keyword.
 AnimationTree
-VBoxContainer
-Label
-MarginContainer
-AudioStreamPlayer

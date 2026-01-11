@@ -15,3 +15,4 @@ C:\Users\gabym\Documents\Godot\1-Project\C#\C#Tappy\.godot\mono\temp\obj\Debug\r
 C:\Users\gabym\Documents\Godot\1-Project\C#\C#Tappy\.godot\mono\temp\obj\Debug\C# - Tappy.pdb
 C:\Users\gabym\Documents\Godot\1-Project\C#\C#Tappy\.godot\mono\temp\obj\Debug\C# - Tappy.genruntimeconfig.cache
 C:\Users\gabym\Documents\Godot\1-Project\C#\C#Tappy\.godot\mono\temp\obj\Debug\ref\C# - Tappy.dll
+C:\Users\gabym\Documents\Godot\1-Project\C#\C#Tappy\.godot\mono\temp\obj\Debug\C# - Tappy.sourcelink.json
