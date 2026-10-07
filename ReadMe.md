@@ -34,7 +34,7 @@ Ce projet est une implémentation du célèbre jeu Flappy Bird dans Godot. Il m'
 ### 🔧 Technicité Godot
 - **Resources personnalisées** : Création de types de données réutilisables et configurables
 - **CharacterBody vs Area2D** : Compréhension des différences fondamentales entre ces deux types de nœuds
-- **Physique intégrée** : Lever de l'utilisation du moteur physique de Godot plutôt que des implémentations manuelles
+- **Physique intégrée** : Utilisation du moteur physique de Godot plutôt que des implémentations manuelles
 
 ### 🎮 Game Design
 - **Feedback visuel** : Importance des animations et effets pour le ressenti du joueur
